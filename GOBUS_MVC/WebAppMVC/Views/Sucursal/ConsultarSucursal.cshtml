@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebAppMVC.Models.Sucursal>
+
+@{
+    ViewBag.Title = "ConsultarSucursal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sucursales disponibles</h2>
+
+<p>
+    @Html.ActionLink("Create New", "RegistrarSucursal")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Encargado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Encargado)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.SucursalId }) |
+            @Html.ActionLink("Borrar", "BorrarSucursal", new { id=item.SucursalId })
+        </td>
+    </tr>
+}
+
+</table>

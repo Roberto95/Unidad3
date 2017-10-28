@@ -1,0 +1,51 @@
+﻿@model WebAppMVC.Models.Cita
+
+@{
+    ViewBag.Title = "ConsultarCita";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ConsultarCita</h2>
+
+<div>
+    <h4>Cita</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PlacaNumero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlacaNumero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClienteId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClienteId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SucursalId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SucursalId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CitaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

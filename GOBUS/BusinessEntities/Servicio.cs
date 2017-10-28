@@ -12,15 +12,11 @@ namespace BusinessEntities
     using System;
     using System.Collections.Generic;
     
-    public partial class Citas
+    public partial class Servicio
     {
-        public string CitaID { get; set; }
-        public string ClienteID { get; set; }
-        public string PlacaNumero { get; set; }
-        public System.DateTime FechaCita { get; set; }
-        public string SucursalID { get; set; }
-    
-        public virtual Clientes Clientes { get; set; }
-        public virtual Sucursales Sucursales { get; set; }
+        public int ServicioId { get; set; }
+        public string NombreServicio { get; set; }
+        public string Descripcion { get; set; }
+        public Nullable<decimal> Costo { get; set; }
     }
 }

@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BusinessEntities
+namespace WebAppMVC.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Servicios
+    public partial class Servicio
     {
-        public string ServicioID { get; set; }
+        public int ServicioId { get; set; }
         public string NombreServicio { get; set; }
         public string Descripcion { get; set; }
-        public decimal Costo { get; set; }
+        public Nullable<decimal> Costo { get; set; }
     }
 }

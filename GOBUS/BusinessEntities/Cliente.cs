@@ -12,15 +12,15 @@ namespace BusinessEntities
     using System;
     using System.Collections.Generic;
     
-    public partial class Clientes
+    public partial class Cliente
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Clientes()
+        public Cliente()
         {
-            this.Citas = new HashSet<Citas>();
+            this.Citas = new HashSet<Cita>();
         }
     
-        public string ClienteID { get; set; }
+        public int ClienteId { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
         public string Direccion { get; set; }
@@ -28,6 +28,6 @@ namespace BusinessEntities
         public string Email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Citas> Citas { get; set; }
+        public virtual ICollection<Cita> Citas { get; set; }
     }
 }

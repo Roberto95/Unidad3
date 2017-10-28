@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebAppMVC.Models.Cliente>
+
+@{
+    ViewBag.Title = "ConsultarClientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ConsultarClientes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AgregarCliente")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellidos)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditarCliente", new { id=item.ClienteId }) |
+            @Html.ActionLink("Details", "ConsultarCliente", new { id=item.ClienteId }) |
+            @Html.ActionLink("Delete", "EliminarCliente", new { id=item.ClienteId })
+        </td>
+    </tr>
+}
+
+</table>

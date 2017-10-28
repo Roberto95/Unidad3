@@ -13,10 +13,10 @@ namespace BusinessEntities
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AgenciaVehiculosEntities : DbContext
+    public partial class GOBUSEntities : DbContext
     {
-        public AgenciaVehiculosEntities()
-            : base("name=AgenciaVehiculosEntities")
+        public GOBUSEntities()
+            : base("name=GOBUSEntities")
         {
         }
     
@@ -25,9 +25,9 @@ namespace BusinessEntities
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Citas> Citas { get; set; }
-        public virtual DbSet<Clientes> Clientes { get; set; }
-        public virtual DbSet<Servicios> Servicios { get; set; }
-        public virtual DbSet<Sucursales> Sucursales { get; set; }
+        public virtual DbSet<Cita> Citas { get; set; }
+        public virtual DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<Servicio> Servicios { get; set; }
+        public virtual DbSet<Sucursal> Sucursals { get; set; }
     }
 }

@@ -51,62 +51,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Citas.cs">
-      <DependentUpon>GobusModel.tt</DependentUpon>
+    <Compile Include="Cita.cs">
+      <DependentUpon>GOBUSModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="Clientes.cs">
-      <DependentUpon>GobusModel.tt</DependentUpon>
+    <Compile Include="Cliente.cs">
+      <DependentUpon>GOBUSModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="GobusModel.Context.cs">
+    <Compile Include="GOBUSModels.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GobusModel.Context.tt</DependentUpon>
+      <DependentUpon>GOBUSModels.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="GobusModel.cs">
+    <Compile Include="GOBUSModels.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GobusModel.tt</DependentUpon>
+      <DependentUpon>GOBUSModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="GobusModel.Designer.cs">
+    <Compile Include="GOBUSModels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GobusModel.edmx</DependentUpon>
+      <DependentUpon>GOBUSModels.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Servicios.cs">
-      <DependentUpon>GobusModel.tt</DependentUpon>
+    <Compile Include="Servicio.cs">
+      <DependentUpon>GOBUSModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="Sucursales.cs">
-      <DependentUpon>GobusModel.tt</DependentUpon>
+    <Compile Include="Sucursal.cs">
+      <DependentUpon>GOBUSModels.tt</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="GobusModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>GobusModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="GobusModel.edmx.diagram">
-      <DependentUpon>GobusModel.edmx</DependentUpon>
+    <EntityDeploy Include="GOBUSModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GOBUSModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="GOBUSModels.edmx.diagram">
+      <DependentUpon>GOBUSModels.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GobusModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>GobusModel.edmx</DependentUpon>
-      <LastGenOutput>GobusModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="GobusModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>GobusModel.edmx</DependentUpon>
-      <LastGenOutput>GobusModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="GOBUSModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GOBUSModels.edmx</DependentUpon>
+      <LastGenOutput>GOBUSModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="GOBUSModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GOBUSModels.edmx</DependentUpon>
+      <LastGenOutput>GOBUSModels.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
