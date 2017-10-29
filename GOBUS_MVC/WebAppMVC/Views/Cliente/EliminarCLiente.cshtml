@@ -6,7 +6,15 @@
 }
 
 <h2>EliminarCLiente</h2>
+@{
+    if (ViewBag.Errorm == true)
+    {
+        <script>
+            alert('Elimine primero la(s) cita(s) agregada(s) a este usuario.');
+        </script>
 
+    }
+}
 <h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>Cliente</h4>

@@ -71,9 +71,19 @@ namespace WebAppMVC.Controllers
                 using (GOBUSEntities db = new GOBUSEntities())
                 {
 
-                    var q=db.Sucursal.Find(id);
-                    db.Sucursal.Remove(q);
-                    db.SaveChanges();
+                    if (db.Cita.Where(x => x.SucursalId== id).Count() > 0)
+                    {
+                        ViewBag.Errorm = true;
+                        return View();
+
+                    }
+                    else
+                    {
+                        var q = db.Sucursal.Find(id);
+                        db.Sucursal.Remove(q);
+                        db.SaveChanges();
+
+                    }
                 }
             }catch(SqlException ex)
             {

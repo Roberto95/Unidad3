@@ -261,6 +261,8 @@
     <Content Include="Views\Cita\AgregarCita.cshtml" />
     <Content Include="Views\Cita\ConsultarCita.cshtml" />
     <Content Include="Views\Cita\ConsultarCitas.cshtml" />
+    <Content Include="Views\Cita\ModificarCita.cshtml" />
+    <Content Include="Views\Cita\EliminarCita.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

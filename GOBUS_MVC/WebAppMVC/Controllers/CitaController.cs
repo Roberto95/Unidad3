@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebAppMVC.Models;
@@ -77,14 +79,79 @@ namespace WebAppMVC.Controllers
             }
         }
 
+        public ActionResult ModificarCita(int? id)
+        {
+            using (GOBUSEntities db = new GOBUSEntities())
+            {
+                Cita c = db.Cita.Find(id);
+                if (c == null)
+                {
+                    return HttpNotFound();
+                }
+                ViewBag.SucursalId = new SelectList(db.Sucursal, "SucursalId", "Nombre", c.SucursalId).ToList();
+                ViewBag.ClienteId = new SelectList(db.Cliente, "ClienteId", "Nombre", c.ClienteId).ToList();
+
+                return View(c);
+            }
+
+        }
+
+        [HttpPost]
         public ActionResult ModificarCita(Cita c)
         {
             using(GOBUSEntities db=new GOBUSEntities())
             {
-                ViewBag.SucursalId = new SelectList(db.Sucursal, "SucursalId", "Nombre").ToList();
-                ViewBag.ClienteId = new SelectList(db.Cliente, "ClienteId", "Nombre").ToList();
-                return View();
+                    ModelState.Clear();
+                if (ModelState.IsValid)
+                {
+                    db.Cita.Attach(c);
+                    db.Entry(c).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("ConsultarCitas");
+                }
+                ViewBag.SucursalId = new SelectList(db.Sucursal, "SucursalId", "Nombre", c.SucursalId).ToList();
+                ViewBag.ClienteId = new SelectList(db.Cliente, "ClienteId", "Nombre", c.ClienteId).ToList();
+                return View(c);
             }
+        }
+
+        public ActionResult EliminarCita(int? id)
+        {
+            using (GOBUSEntities db = new GOBUSEntities())
+            {
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                Cita c = db.Cita.Find(id);
+                if (c == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(c);
+            }
+        }
+
+        [HttpPost, ActionName("EliminarCita")]
+        [ValidateAntiForgeryToken]
+        public ActionResult EliminarCitaConfirmar(int id)
+        {
+            try
+            {
+                using (GOBUSEntities db = new GOBUSEntities())
+                {
+
+                    var q = db.Cita.Find(id);
+                    db.Cita.Remove(q);
+                    db.SaveChanges();
+                }
+            }
+            catch (SqlException ex)
+            {
+                ViewBag.Message = ex.Message;
+            }
+            return RedirectToAction("ConsultarCitas");
+
         }
 
     }

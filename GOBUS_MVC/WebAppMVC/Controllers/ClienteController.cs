@@ -85,10 +85,18 @@ namespace WebAppMVC.Controllers
             {
                 using (GOBUSEntities db = new GOBUSEntities())
                 {
+                    if (db.Cita.Where(x => x.ClienteId == id).Count() > 0)
+                    {
+                        ViewBag.Errorm = true;
+                        return View();
+                        
+                    }else
+                    {
+                        var q = db.Cliente.Find(id);
+                        db.Cliente.Remove(q);
+                        db.SaveChanges();
 
-                    var q = db.Cliente.Find(id);
-                    db.Cliente.Remove(q);
-                    db.SaveChanges();
+                    }
                 }
             }
             catch (SqlException ex)
@@ -103,12 +111,12 @@ namespace WebAppMVC.Controllers
         {
             using(GOBUSEntities db=new GOBUSEntities())
             {
-                Cliente movie = db.Cliente.Find(id);
-                if (movie == null)
+                Cliente c = db.Cliente.Find(id);
+                if (c == null)
                 {
                     return HttpNotFound();
                 }
-                return View(movie);
+                return View(c);
             }
             
         }

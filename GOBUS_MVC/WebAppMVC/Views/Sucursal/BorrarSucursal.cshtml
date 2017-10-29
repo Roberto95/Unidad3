@@ -6,7 +6,14 @@
 }
 
 <h2>BorrarSucursal</h2>
-
+@{ 
+    if (ViewBag.Errorm == true)
+    {
+        <script>
+            alert('Elimine cita(s) agregada(s) a esta sucursal.');
+            </script>
+    }
+}
 <h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>Sucursal</h4>

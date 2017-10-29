@@ -22,7 +22,7 @@ namespace WebAppMVC.Models
         [Required(ErrorMessage = "Campo requerido")]
         public string PlacaNumero { get; set; }
         [DataType(DataType.Date)]
-        [Required(ErrorMessage = "Formato AAAA/MM/DD")]
+        [Required(ErrorMessage = "Formato AAAA-MM-DD")]
         public Nullable<System.DateTime> FechaCita { get; set; }
 
 

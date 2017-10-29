@@ -48,9 +48,9 @@
             @Html.DisplayFor(modelItem => item.Placas)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CitaId }) |
+            @Html.ActionLink("Edit", "ModificarCita", new { id=item.CitaId }) |
             @Html.ActionLink("Details", "ConsultarCita", new { id=item.CitaId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CitaId })
+            @Html.ActionLink("Delete", "EliminarCita", new { id=item.CitaId })
         </td>
     </tr>
 }
