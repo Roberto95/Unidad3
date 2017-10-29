@@ -8,7 +8,7 @@
 <h2>Sucursales disponibles</h2>
 
 <p>
-    @Html.ActionLink("Create New", "RegistrarSucursal")
+    @Html.ActionLink("Registrar nueva", "RegistrarSucursal")
 </p>
 <table class="table">
     <tr>
@@ -42,8 +42,7 @@
             @Html.DisplayFor(modelItem => item.Encargado)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.SucursalId }) |
-            @Html.ActionLink("Borrar", "BorrarSucursal", new { id=item.SucursalId })
+            @Html.ActionLink("Eliminar", "BorrarSucursal", new { id=item.SucursalId })
         </td>
     </tr>
 }

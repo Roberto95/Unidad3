@@ -198,6 +198,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\concesionario.focus-none.max-1200x600.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -257,12 +258,12 @@
     <Content Include="Views\Cliente\ConsultarClientes.cshtml" />
     <Content Include="Views\Cliente\EliminarCLiente.cshtml" />
     <Content Include="Views\Cliente\EditarCliente.cshtml" />
-    <Content Include="Views\Cliente\AgregarCliente.cshtml" />
     <Content Include="Views\Cita\AgregarCita.cshtml" />
     <Content Include="Views\Cita\ConsultarCita.cshtml" />
     <Content Include="Views\Cita\ConsultarCitas.cshtml" />
     <Content Include="Views\Cita\ModificarCita.cshtml" />
     <Content Include="Views\Cita\EliminarCita.cshtml" />
+    <Content Include="Views\Cliente\AgregarCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

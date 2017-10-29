@@ -5,19 +5,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>EliminarCLiente</h2>
+<h2>Eliminar cliente</h2>
 @{
     if (ViewBag.Errorm == true)
     {
         <script>
-            alert('Elimine primero la(s) cita(s) agregada(s) a este usuario.');
+            alert('Elimine primero la(s) cita(s) agregada(s) a este cliente.');
         </script>
 
     }
 }
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Seguro que desea eliminar este cliente?</h3>
 <div>
-    <h4>Cliente</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -67,7 +67,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "ConsultarClientes")
+            @Html.ActionLink("Regresar", "ConsultarClientes")
         </div>
     }
 </div>

@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ConsultarClientes</h2>
+<h2>Clientes</h2>
 
 <p>
-    @Html.ActionLink("Create New", "AgregarCliente")
+    @Html.ActionLink("Agregar cliente", "AgregarCliente")
 </p>
 <table class="table">
     <tr>
@@ -37,9 +37,9 @@
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditarCliente", new { id=item.ClienteId }) |
-            @Html.ActionLink("Details", "ConsultarCliente", new { id=item.ClienteId }) |
-            @Html.ActionLink("Delete", "EliminarCliente", new { id=item.ClienteId })
+            @Html.ActionLink("Editar", "EditarCliente", new { id=item.ClienteId }) |
+            @Html.ActionLink("Detalles", "ConsultarCliente", new { id=item.ClienteId }) |
+            @Html.ActionLink("Eliminar", "EliminarCliente", new { id=item.ClienteId })
         </td>
     </tr>
 }

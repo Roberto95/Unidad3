@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ConsultarCitas</h2>
+<h2>Citas</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar cita", "AgregarCita")
 </p>
 <table class="table">
     <tr>
@@ -48,9 +48,9 @@
             @Html.DisplayFor(modelItem => item.Placas)
         </td>
         <td>
-            @Html.ActionLink("Edit", "ModificarCita", new { id=item.CitaId }) |
-            @Html.ActionLink("Details", "ConsultarCita", new { id=item.CitaId }) |
-            @Html.ActionLink("Delete", "EliminarCita", new { id=item.CitaId })
+            @Html.ActionLink("Editar", "ModificarCita", new { id=item.CitaId }) |
+            @Html.ActionLink("Detalles", "ConsultarCita", new { id=item.CitaId }) |
+            @Html.ActionLink("Eliminar", "EliminarCita", new { id=item.CitaId })
         </td>
     </tr>
 }
